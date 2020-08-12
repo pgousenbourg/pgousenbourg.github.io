@@ -1,0 +1,1521 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd>
+<html lang="en">
+
+
+<head>
+	<!-- UTF-8 incoder, compatibily with edge, responsive -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- Document metadata -->
+	<meta name="author" content="Pierre-Yves Gousenbourger" />
+	<meta name="description" content="Research web page of Pierre-Yves Gousenbourger" />
+	<meta name="keywords" content="Interpolation on manifolds,Riemannian manifolds,curve fitting,Bezier curves">
+	
+	<!-- Title -->
+	<title>
+		Pierre-Yves Gousenbourger, Applied Mathematics
+	</title>
+	
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" href="utils/gousenbourger-styles.css">
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="pics/favicon.ico">
+	
+	<!-- Javascript for math -->
+	<!-- <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script> -->
+	<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript" async
+			src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+	</script>
+</head>
+
+
+
+
+
+<body>
+	
+	<div class="centered">
+	<!-- Header -->	
+	<header>
+		<div class="myname">
+			<p class="name">Pierre-Yves Gousenbourger</p>
+			<p class="subname">Teaching assistant at Université catholique de Louvain</p>
+			<!-- when size < 950px -->
+			<p class="subname_950">T.A. at Université catholique de Louvain</p> 
+			<!-- when size < 800px -->
+			<p class="subname_800">T.A. at UCLouvain</p>
+		</div>
+		<a href="http://www.uclouvain.be/icteam/"><img title="ICTEAM" class="rounded-pic icteam" src="pics/icteam.png" width=100%/></a>
+	</header>
+	
+	<!-- Navigation -->
+	<nav>
+		<ul>
+			<li id="nav-about" class="active">
+				<a href="#about" id="link-about">
+					<span class="nav">About</span>
+					<img src="pics/nav_about.png" class="nav_800" width=100%/>
+				</a>
+			</li>
+			<li id="nav-research">
+				<a href="#research" id="link-research">
+					<span class="nav">Research</span>
+					<img src="pics/nav_research.png" class="nav_800" width=100%/>
+				</a>
+			</li>
+			<li id="nav-publications">
+				<a href="#publications" id="link-publications">
+					<span class="nav">Publications</span>
+					<img src="pics/nav_publications.png" class="nav_800" width=100%/>
+				</a>
+			</li>
+			<li id="nav-teaching">
+				<a href="#teaching" id="link-teaching">
+					<span class="nav">Teaching</span>
+					<img src="pics/nav_teaching.png" class="nav_800" width=100%/>
+				</a>
+			</li>
+			<li id="nav-nt">
+				<a href="#nt" id="link-nt">
+					<span class="nav">Numerical tour</span>
+					<img src="pics/nav_nt.png" class="nav_800" width=100%/>
+				</a>
+			</li>
+			<li id="nav-contact">
+				<a href="#contact" id="link-contact">
+					<span class="nav">Contact</span>
+					<img src="pics/nav_contact.png" class="nav_800" width=100%/>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	
+	<!-- About -->
+	<div name="About" id="sec-about" class="tab">
+		<section>
+			<aside class="image-left">
+				<a href="pics/photo.png"><img title="Pierre-Yves Gousenbourger" class="rounded-pic" src="pics/photo.png" width="100%"/></a>
+			</aside>
+			
+			<article>
+				<p class="subtitle">
+					Academic curriculum in short
+				</p>
+				<p>
+					I started my PhD at <a href="http://www.uclouvain.be">Université catholique de Louvain</a> in September 2014 under the supervision of Pierre-Antoine Absil and Laurent Jacques. I conduct my thesis at the <a href="http://www.uclouvain.be/icteam">ICTEAM</a> research institute, in Louvain-la-Neuve.
+				</p>
+				<p>
+					I graduated from the Université catholique de Louvain as an engineer in <a href="http://www.uclouvainb.be/map">Applied Mathematics</a> and conducted a master thesis under the supervision of Pierre-Antoine Absil.
+				</p>
+				<p>
+					My research interests concern interpolation, optimization and imaging on manifolds, mainly conducted by Bézier functions.
+				</p>
+				<p class="subtitle">
+					Position
+				</p>
+				<p>
+					I am a teaching assistant at <a href="http://www.uclouvain.be/epl">École polytechnique de Louvain</a> (EPL) and very interested in all pedagogical aspects of my job. More precisely, I supervise students for classes in the Electrical Engineering (<a href="https://sites.uclouvain.be/elen/">ELEN</a>) department of the ICTEAM institute.
+				</p>
+				<p class="subtitle">
+					Miscellaneous
+				</p>
+				<p>
+					I share my office with François Rottenberg (phD) and Valerio Cambareri (post-doc).
+				</p>
+			</article> <!-- corps -->
+		</section>
+	</div><!-- about -->
+	
+	
+	<!-- Research -->
+	<div name="Research" id="sec-research" style="display: none" class="tab">
+		<section>
+			<!-- Surfaces -->
+			<aside class="image-left"><a href="pics/trucks.png"><img title="Surfaces on SO(3)" class="rounded-pic" src="pics/trucks.png" width="100%"/></a></aside>
+			
+			<article>
+				<p class="subtitle">
+					Bidimensional Bézier interpolation on manifolds
+				</p>
+				<p>
+					In this project, we receive a set of data points evaluated on a Riemannian manifold $\mathcal{M}$ (for instance the space of matrices of rotation like in the picture; or the sphere). These points $p_{ij}$ are time-labeled, so associated to time-stamps $(t_1^i,t_2^j)$ organised on a regular rectangular grid $D$.
+				</p>
+				<p>
+					Based on these points, the goal of the game is to propose a smooth (i.e. $C^1$) surface of Bézier
+					$$\mathfrak{B}: D \to \mathcal{M}: (t_1,t_2) \mapsto \mathfrak{B}(t_1,t_2)$$ 
+					such that the data points are interpolated by the surface, meaning $\mathfrak{B}(t_1^i, t_2^j) = p_{ij}$.
+				</p>
+				<p>
+					This task is very well understood when the space is Euclidean, but quite less when points live on a nonlinear manifold. It is also a generalization of my master thesis.
+				</p>
+				<div style="display: none" id="surfaces-bezier-more">
+					<p>
+						This work was done in collaboration with the university of Münster (Applied mathematics department) joinly with <a href="http://wwwmath.uni-muenster.de/num/wirth/">Benedikt Wirth</a> and <a href="http://wwwmath.uni-muenster.de/num/wirth/people/Striewski/index.html">Paul Striewski</a>. It has application in shape interpolation, matrix reconstruction or cartography.
+					</p>
+					<p> 
+						The amont of possible functions interpolating the data points is infinite. We reduce the search set by constraining the surface to be a piecewise cubic Bézier spline, i.e. driven by control points. This family of function is of the form
+						$$\beta(t_1,t_2,\mathbf{b})$$
+						where $\mathbf{b} \in \mathcal{M}$ is a set of 16 control points on the manifold, and $\beta$ corresponds to a weighted (Karcher) mean of these control points.
+						This choice implies a very simple (geodesic) constrain on the control points to achieve the smoothness of the spline.
+						Finally, to propose the best function possible, a solution is to minimize its mean square (Riemannian) acceleration over the control points.
+					</p>
+					<blockquote>
+						P.-A. Absil, Pierre-Yves Gousenbourger, Paul Striewski, Benedikt Wirth<br/>
+						<a href="http://sites.uclouvain.be/absil/2015.10"><em>Differentiable piecewise-Bézier surfaces on Riemannian manifolds</em></a><br/>
+						Technical report UCL-INMA-2015.10 <br/>
+						2015.
+					</blockquote>
+					<p>
+						As the control points generation is quite long in the above article, we developped an other method to compute those based on a B-spline representation of the curve. We increase drastically the speed of the generation by paying the price of a smallest accuracy.
+					</p>
+					<blockquote>
+						P.-A. Absil, Pierre-Yves Gousenbourger, Paul Striewski, Benedikt Wirth<br/>
+						<em>Differentiable piecewise-Bézier interpolation on Riemannian manifolds</em>.<br/>
+						24th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning (ESANN 2016).<br/>
+						2016.
+					</blockquote>
+					<p>
+						We developped different algorithms and methods to compute these surfaces on a general Riemannian manifold. Mainly, the computation of control points and the reconstruction of the curve may vary. Check our Numerical Tour.
+					</p>
+				</div>
+				<p class="more" onclick="$('#surfaces-bezier-more').slideToggle(400);">Learn more/less.</p>
+			</article>
+		</section>
+		
+		<!-- Curves -->
+		<section>
+			<aside class="image-left"><a href="pics/sphere.png"><img title="Curve on sphere" class="rounded-pic" src="pics/sphere.png" width="100%"/></a></aside>
+			
+			<article>
+				<p class="subtitle">
+					Unidimensional Bézier interpolation on manifolds
+				</p>
+				<p>
+					This project was my master thesis lead in 2013 under Pierre-Antoine Absil's supervision. We receive a set of data points $p_0,\dots,p_n \in \mathcal{M}$ associated to time-stamps $t_0,\dots,t_n$ where $t_i = i \in \mathbb{Z}$. The goal of the project is to find a curve $\gamma$ such that the curve is smooth and looks "nice". Furthermore, we constraint the curve to interpolate the data points as $\gamma(t_i) = p_i$. This problem finds place in medical imaging and in volume reconstruction based on MRI.
+				</p>
+				<p>
+					With Pierre-Antoine, we investigated on manifold-valued Bézier functions and on the usability of the De Casteljau algorithm in such situations. At the end of the day, we obtained that curves can be computed from a simple linear (Euclidean !) system resolution.
+				</p>
+				<div style="display: none" id="curves-bezier-more">
+					<p>
+						In the solution we proposed, the curve $\gamma$ takes the form of a piecewise-Bézier function of the form
+						$$\gamma: [0,n] \to \mathcal{M}: \gamma(t) = \beta(t-i,\mathbf{b}), \quad \text{with} \ i = \lfloor t \rfloor,$$
+						where $\beta$ is a Bézier function and $\mathbb{b}$ is a set of control points $b_k \in \mathcal{M}$.
+						We made a choice on the degree of the Bézier function: quadratic on $[t_0,t_1]$ and on $[t_{n-1},t_n]$ and cubic elsewhere.
+						On this framework, we proposed different techniques to optimize the global Bézier spline (i.e. optimizing the control points).
+					</p>
+					<p>
+						A first possibility is to fix velocities at interpolation points to assure the differentiability of the curve at those points, and then optimize the control points on a tangent space.
+					</p>
+					<blockquote>
+						Pierre-Yves Gousenbourger, Chafik Samir, P.-A. Absil<br/>
+						<a href="http://sites.uclouvain.be/absil/2014.10"><em>Piecewise-Bézier $C^1$ interpolation on Riemannian manifolds with application to 2D shape morphing</em></a><br/>
+						International Conference on Pattern Recognition (ICPR2014), Stockholm.<br/>
+						2014.
+					</blockquote>
+					<p>
+						To relax this heuristic constraint on the velocities, we proposed, with Antoine Arnould, an intergrated solution. Basically, the points are projected on a (Euclidean) tangent space and the optimization is done on this Euclidean space. We apply this method to shape reconstruction in medical imaging.
+					</p>
+					<blockquote>
+						Antoine Arnould, Pierre-Yves Gousenbourger, Chafik Samir, P.-A. Absil, Michel Canis<br/>
+						<a href="http://sites.uclouvain.be/absil/2015.03"><em>Fitting Smooth Paths on Riemannian Manifolds: Endometrial Surface Reconstruction and Preoperative MRI-Based Navigation.</em></a><br/>
+						Geometric Science of Information: second International Conference (GSI 2015), Palaiseau, France.<br/>
+						Proceedings (Image Processing, Computer Vision, Pattern Recognition, and Graphics; 9389), Springer.<br/>
+						2015.
+					</blockquote>
+					<a>
+						Here also, codes are available on this web page. Check our Numerical Tour.
+					</a>
+				</div>
+				<p class="more" onclick="$('#curves-bezier-more').slideToggle(400);">Learn more/less.</p>
+			</article>
+		</section>
+		
+		
+		<!-- Research groups -->
+		<section>
+			<aside class="image-left">
+				<a href="http://sites.uclouvain.be/ispgroup"><img title="ISPGroup" class="rounded-pic" src="pics/ispgroup.png" width="100%"/></a><br/>
+				<a href="http://sites.uclouvain.be/dysco"><img title="Dysco" class="rounded-pic" src="pics/dysco.gif" width="100%"/></a>
+			</aside>
+			<article>
+				<p class="subtitle">
+					Research groups
+				</p>
+				<p>
+					I'm part of the following research group:
+					<ul>
+						<li>
+							RANSO
+						</li>
+						<li>
+							<a href="http://sites.uclouvain.be/ispgroup">ISP group</a>
+						</li>
+						<li>
+							<a href="http://sites.uclouvain.be/dysco/">Dysco</a>
+						</li>
+					</ul>
+				</p>
+			</article> <!-- corps -->
+		</section>
+	</div><!-- research -->
+	
+	<!-- Publications -->
+<div name="Publications" id="sec-publications" style="display: none" class="tab">
+	<section>
+		<aside class="image-left"><img title="UCL" class="rounded-pic" src="pics/publications.png" width=100%/></aside>
+		
+		<article>
+			<p class="subtitle" style="margin-top:0">
+				<img style="padding-right: 10px;" height="20px" src="pics/icon_pdf.png"> Journal papers
+			</p>
+			<ul class="papers">
+				<!-- Frontiers -->
+				<li>
+					<div class="paperEntry">
+						<div>
+							P.-Y. Gousenbourger, <a target="_blank" href="https://ronnybergmann.net/">R. Bergmann</a>. 
+							<span class="paperTitle">A variational model for data fitting on manifolds by minimizing the acceleration of a Bézier curve.</span>
+							<span class="paperJournal">Frontiers in Applied Mathematics and Statistics</span>, 4(59), 2018.
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_J03').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/frontiers2018.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a class="more" onclick="$('#cite_J03').slideToggle(400);"><img src="pics/icon_bib.png"></a></li>
+							<li><a target="_blank" href="https://www.frontiersin.org/articles/10.3389/fams.2018.00059/full"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_J03">
+						We derive a variational model to fit a composite Bézier curve to a set of data points on a Riemannian manifold.
+						The resulting curve is obtained in such a way that its mean squared acceleration is minimal in addition to remaining close the data points. 
+						We approximate the acceleration by discretizing the squared second order derivative along the curve. 
+						We derive a closed-form, numerically stable and efficient algorithm to compute the gradient of a Bézier curve on manifolds with respect 
+						to its control points, expressed as a concatenation of so-called adjoint Jacobi fields. 
+						Several examples illustrate the capabilites and validity of this approach both for interpolation and approximation. 
+						The examples also illustrate that the approach outperforms previous works tackling this problem.
+					</p>
+					<div class="paperQuote" id="cite_J03">
+<pre class="codeinput">@article{Bergmann2018a,
+  title   = {{A variational model for data fitting on manifolds by minimizing 
+             the acceleration of a B\'ezier curve}},
+  author  = {Bergmann, Ronny and Gousenbourger, Pierre-Yves},
+  journal = {Frontiers in Applied Mathematics and Statistics},
+  doi     = {10.3389/fams.2018.00059},
+  volume  = {4},
+  number  = {59},
+  pages   = {1--16},
+  year    = {2018}
+}</pre>
+					</div>
+				</li>
+				
+				
+				
+				<!-- JMIV -->
+				<li>
+					<div class="paperEntry">
+						<div>
+							P.-Y. Gousenbourger, <a target="_blank" href="https://perso.uclouvain.be/estelle.massart/">E. Massart</a>, <a target="_blank" href="https://sites.uclouvain.be/absil/">P.-A. Absil</a>. 
+							<span class="paperTitle">Data Fitting on Manifolds with Composite Bézier-Like Curves and Blended Cubic Splines.</span>
+							<span class="paperJournal">Journal of Mathematical Imaging and Vision</span>, 61(5), pp. 645-671, 2018.
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_J02').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/jmiv2018.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a class="more" onclick="$('#cite_J02').slideToggle(400);"><img src="pics/icon_bib.png"></a></li>
+							<li><a target="_blank" href="https://link.springer.com/article/10.1007%2Fs10851-018-0865-2"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_J02">
+						We propose several methods that address the problem of fitting a $C^1$ curve $\gamma$ to time-labeled data points on a manifold. 
+						The methods have a parameter, $\lambda$, to adjust the relative importance of the two goals that the curve should meet: 
+						being "straight enough" while fitting the data "closely enough". 
+						The methods are designed for ease of use: 
+						they only require to compute Riemannian exponentials and logarithms, they represent the curve by means of a number of tangent 
+						vectors that grows linearly with the number of data points, and, once the representation is computed, evaluating $\gamma(t)$ at any $t$ 
+						requires a small number of exponentials and logarithms (independent of the number of data points). 
+						Among the proposed methods, the blended cubic spline technique combines the additional properties of interpolating the data when $\lambda \to \infty$ 
+						and reducing to the well-known cubic smoothing spline when the manifold is Euclidean. The methods are illustrated on synthetic and real data.
+					</p>
+					<div class="paperQuote" id="cite_J02">
+<pre class="codeinput">@article{Gousenbourger2018,
+  author  = {Gousenbourger, Pierre-Yves and Massart, Estelle and Absil, P.-A.},
+  title   = {Data fitting on manifolds with composite {B\'e}zier-like curves and blended cubic splines},
+  journal = {Journal of Mathematical Imaging and Vision},
+  doi     = {10.1007/s10851-018-0865-2},
+  volume  = {61},
+  number  = {5},
+  pages   = {645-671},
+  year    = {2018}
+}</pre>
+					</div>
+				</li>
+				
+				
+				
+				<!-- SIAM -->
+				<li>
+					<div class="paperEntry">
+						<div>
+							<a target="_blank" href="https://sites.uclouvain.be/absil/">P.-A. Absil</a>, P.-Y. Gousenbourger, <a target="_blank" href="https://www.uni-muenster.de/AMM/num/wirth/people/Striewski/index.html">P. Striewski</a>, <a target="_blank" href="https://www.uni-muenster.de/Cells-in-Motion/people/all/wirth-b.php">B. Wirth</a>. 
+							<span class="paperTitle">Differentiable Piecewise-Bézier Surfaces on Riemannian Manifolds.</span>
+							<span class="paperJournal">SIAM Journal on Imaging Sciences</span>, 9(4), pp. 1788-1828, 2016.
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_J01').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/siims2016.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a class="more" onclick="$('#cite_J01').slideToggle(400);"><img src="pics/icon_bib.png"></a></li>
+							<li><a target="_blank" href="https://epubs.siam.org/doi/10.1137/16M1057978"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_J01">
+						We propose several methods that address the problem of fitting a $C^1$ curve $\gamma$ to time-labeled data points on a manifold. 
+						The methods have a parameter, $\lambda$, to adjust the relative importance of the two goals that the curve should meet: 
+						being "straight enough" while fitting the data "closely enough". 
+						The methods are designed for ease of use: 
+						they only require to compute Riemannian exponentials and logarithms, they represent the curve by means of a number of tangent 
+						vectors that grows linearly with the number of data points, and, once the representation is computed, evaluating $\gamma(t)$ at any $t$ 
+						requires a small number of exponentials and logarithms (independent of the number of data points). 
+						Among the proposed methods, the blended cubic spline technique combines the additional properties of interpolating the data when $\lambda \to \infty$ 
+						and reducing to the well-known cubic smoothing spline when the manifold is Euclidean. The methods are illustrated on synthetic and real data.
+					</p>
+					<div class="paperQuote" id="cite_J01">
+<pre class="codeinput">@article{Absil2016,
+  author  = {Absil, P.-A. and Gousenbourger, Pierre-Yves and Striewski, Paul and Wirth, Benedikt},
+  title   = {{Differentiable Piecewise-B\'ezier Surfaces on Riemannian Manifolds}},
+  doi     = {10.1137/16M1057978},
+  journal = {SIAM Journal on Imaging Sciences},
+  volume  = {9},
+  number  = {4},
+  pages   = {1788--1828},
+  year    = {2016}
+}</pre>
+					</div>
+				</li>
+			</ul>
+			
+			
+			
+			
+			
+			
+			<p class="subtitle">
+				<img style="padding-right: 10px;" height="20px" src="pics/icon_pdf.png"> Conference papers
+			</p>
+			<ul class="papers">
+				<!-- CoDiT2019 -->
+				<li>
+					<div class="paperEntry">
+						<div>
+              <a target="_blank" href="https://sites.google.com/view/ntson/home?fbclid=IwAR35yNqlZr5D93VeebbRvhxet_n_CXwfOrZwunlWopXizz9ojUjlzdhM7wA">N. T. Son</a>, P.-Y. Gousenbourger, <a target="_blank" href="https://perso.uclouvain.be/estelle.massart/">E. Massart</a>, <a target="_blank" href="https://sites.uclouvain.be/absil/">P.-A. Absil</a>.
+							<span class="paperTitle">Online balanced truncation for linear time-varying systems using continuously differentiable interpolation on Grassmann manifold
+</span>
+							<span class="paperJournal">Proceedings of the 6th International Conference on Control, Decision and Information Technologies (CoDIT 2019)</span>, 2019, to appear.
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_C08').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/codit2019.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a class="more" onclick="$('#cite_C08').slideToggle(400);"><img src="pics/icon_bib.png"></a></li>
+							<li><a href="https://codit19.com/index.php/accueil" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_C08">
+						We consider model order reduction of linear time-varying systems on a finite time interval using balanced truncation. A standard way to perform MOR is to first numerically integrate the associated pair of differential Lyapunov equations for the two gramians, then compute projection matrices using the square root method, and finally formulate the reduced systems at each time instant of a chosen grid. This approach is well-known for delivering good approximation, but rather costly in computation and storage requirement. Furthermore, if one needs to compute the reduced system for any new time instant that is not included in the chosen grid, the mentioned procedure must be performed again without explicitly making use of the already computed data. For dealing with such a situation, we propose to store the projection matrices corresponding to a simplified sparse time grid and to use them to recover the projection subspaces at any other time instant via curve interpolation on the Grassmann manifold. By doing this, we can avoid the repetition of solving the differential Lyapunov equations which is the most expensive step in the procedure and therefore, as shown in a numerical example, accelerate the online reduction process.
+					</p>
+          <div class="paperQuote" id="cite_C08">
+<pre class="codeinput">@inproceedings{Son2019,
+  author  = {Son, Nguyen Thanh and Gousenbourger, Pierre-Yves and Massart, Estelle and Absil, P.-A.},
+  title   = {Online balanced truncation for linear time-varying systems using continuously differentiable interpolation on Grassmann manifold},
+  booktitle = {2019 6th International Conference on Control, Decision and Information Technologies (CoDIT)},
+  pages   = {165--170},
+  year    = {2019},
+  organization = {IEEE}
+}</pre>
+					</div>
+				</li>
+        
+        
+        <!-- ESANN2019 -->
+				<li>
+					<div class="paperEntry">
+						<div>
+							<a target="_blank" href="https://perso.uclouvain.be/estelle.massart/">E. Massart</a>, P.-Y. Gousenbourger, <a target="_blank" href="https://sites.google.com/view/ntson/home?fbclid=IwAR35yNqlZr5D93VeebbRvhxet_n_CXwfOrZwunlWopXizz9ojUjlzdhM7wA">N. T. Son</a>, <a target="_blank" href="https://scwww.math.uni-augsburg.de/~stykel/index_en.html">T. Stykel</a>, <a target="_blank" href="https://sites.uclouvain.be/absil/">P.-A. Absil</a>.
+							<span class="paperTitle">Interpolation on the manifold of fixed-rank positive-semidefinite matrices for parametric model order reduction: preliminary results.</span>
+							<span class="paperJournal">ESANN2019</span>, submitted.
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_C07').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/esann2019.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a class="more" onclick="$('#cite_C07').slideToggle(400);"><img src="pics/icon_bib.png"></a></li>
+							<li><a href="https://www.elen.ucl.ac.be/esann/" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_C07">
+						We present several interpolation schemes on the manifold of fixed-rank positive-semidefinite (PSD) matrices.
+						We explain how these techniques can be used for model order reduction of parameterized linear dynamical systems, 
+						and obtain preliminary results on an application.
+					</p>
+          <div class="paperQuote" id="cite_C07">
+<pre class="codeinput">@inproceedings{Massart2019a,
+  author  = {Massart, Estelle and Gousenbourger, Pierre-Yves and Son, Nguyen Thanh and Stykel, Tatjana and Absil, P.-A.},
+  title   = {Interpolation on the manifold of fixed-rank positive-semidefinite matrices for parametric model order reduction: preliminary results},
+  booktitle = {ESANN2019},
+  pages   = {281--286},
+  isbn    = {978-287-587-065-0},
+  publisher = {Springer},
+  year    = {2019}
+}</pre>
+					</div>
+				</li>
+				
+				
+				<!-- GSI2017 -->
+				<li>
+					<div class="paperEntry">
+						<div>
+							P.-Y. Gousenbourger, <a target="_blank" href="https://perso.uclouvain.be/laurent.jacques/">L. Jacques</a>, <a target="_blank" href="https://sites.uclouvain.be/absil/">P.-A. Absil</a>.
+							<span class="paperTitle">Fast method to fit a $C^1$ piecewise-Bézier function to manifold-valued data points: how suboptimal is the curve obtained on the sphere $\mathbb S^2$?</span>
+							<span class="paperJournal">Nielsen, F. and Barbaresco F., editors, GSI2017</span>, pp. 595-603, 2017.
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_C06').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/gsi2017.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a class="more" onclick="$('#cite_C06').slideToggle(400);"><img src="pics/icon_bib.png"></a></li>
+							<li><a href="https://www.see.asso.fr/gsi2017" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_C06">
+						We propose an analysis of the quality of the fitting method proposed in [<a href="https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2017-77.pdf" target="_blank">7</a>].
+						This method fits smooth paths to manifold-valued data points using $C^1$ piecewise-B ́ezier functions. 
+						This method is based on the principle of minimizing an objective function composed of a data-attachment term and a regularization term chosen as the mean squared
+						acceleration of the path. However, the method strikes a tradeoff between speed and accuracy by following a strategy that is guaranteed to yield
+						the optimal curve only when the manifold is linear. 
+						In this paper, we focus on the sphere $S^2$. 
+						We compare the quality of the path returned by the algorithms from [<a href="https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2017-77.pdf" target="_blank">7</a>] 
+						with the path obtained by minimizing, over the same search space of $C^1$ piecewise-B́ezier curves, a finite-difference approximation of the objective 
+						function by means of a derivative-free manifold-based optimization method.
+					</p>
+					<div class="paperQuote" id="cite_C06">
+<pre class="codeinput">@inproceedings{Gousenbourger2017a,
+  author  = {Gousenbourger, Pierre-Yves and Jacques, Laurent and Absil, P.-A.},
+  editor  = {Nielsen, Frank and Barbaresco, Fr{\'e}d{\'e}ric},
+  title   = {Fast method to fit a {$C^1$} piecewise-{B\'{e}}zier function to manifold-valued data points: how suboptimal is the curve obtained on the sphere {$\mathbb S^2$}?},
+  booktitle = {Geometric Science of Information},
+  doi     = {10.1007/978-3-319-68445-1_69},
+  publisher = {Springer},
+  address = {Berlin, Heidelberg},
+  series  = {Lecture Notes in Computer Sciences},
+  volume  = {10589},
+  pages   = {595--603},
+  year    = {2017}
+}</pre>
+					</div>
+				</li>
+				
+				
+				
+				
+				<!-- ESANN2017 -->
+				<li>
+					<div class="paperEntry">
+						<div>
+							P.-Y. Gousenbourger, <a target="_blank" href="https://perso.uclouvain.be/estelle.massart/">E. Massart</a>, A. Musolas, <a target="_blank" href="https://sites.uclouvain.be/absil/">P.-A. Absil</a>, <a target="_blank" href="https://perso.uclouvain.be/laurent.jacques/">L. Jacques</a>, <a target="_blank" href="https://perso.uclouvain.be/julien.hendrickx/">J.M. Hendrickx</a>, <a target="_blank" href="https://aeroastro.mit.edu/youssef-marzouk">Y. Marzouk</a>.
+							<span class="paperTitle">Piecewise-Bézier $C^1$ smoothing on manifolds with application to wind field estimation.</span>
+							<span class="paperJournal">ESANN2017, Springer eds,</span>, pp. 305-301, 2017.
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_C05').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/esann2017.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a class="more" onclick="$('#cite_C05').slideToggle(400);"><img src="pics/icon_bib.png"></a></li>
+							<li><a href="https://www.elen.ucl.ac.be/esann/" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_C05">
+						We propose an algorithm for fitting $C^1$ piecewise-Bézier curves to (possibly corrupted) data points on manifolds.
+						The curve is chosen as a compromise between proximity to data points and regularity.
+						We apply our algorithm as an example to fit a curve to a set of low-rank covariance matrices, a task arising in wind field modeling.
+						We show that our algorithm has denoising abilities for this application.
+					</p>
+					<div class="paperQuote" id="cite_C05">
+<pre class="codeinput">@inproceedings{Gousenbourger2017,
+  author  = {Gousenbourger, Pierre-Yves and Massart, Estelle and Musolas, Antoni and Absil, P.-A. and Jacques, Laurent and Hendrickx, Julien M and Marzouk, Youssef},
+  booktitle = {ESANN2017},
+  pages   = {305--310},
+  publisher = {Springer},
+  title   = {Piecewise-{B}{\'e}zier {$C^1$} smoothing on manifolds with application to wind field estimation},
+  year    = {2017}
+}</pre>
+					</div>
+				</li>
+				
+				
+				<!-- ESANN2016 -->
+				<li>
+					<div class="paperEntry">
+						<div>
+							<a target="_blank" href="https://sites.uclouvain.be/absil/">P.-A. Absil</a>, P.-Y. Gousenbourger, <a target="_blank" href="https://www.uni-muenster.de/AMM/num/wirth/people/Striewski/index.html">P. Striewski</a>, <a target="_blank" href="https://www.uni-muenster.de/Cells-in-Motion/people/all/wirth-b.php">B. Wirth</a>.
+							<span class="paperTitle">Differentiable piecewise-Bézier interpolation on Riemannian manifolds.</span>
+							<span class="paperJournal">ESANN2016, Springer eds,</span>, pp. 95-100, 2016.
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_C04').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/esann2016.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a class="more" onclick="$('#cite_C04').slideToggle(400);"><img src="pics/icon_bib.png"></a></li>
+							<li><a href="https://www.elen.ucl.ac.be/esann/" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_C04">
+						We propose a generalization of classical Euclidean piecewise-Bézier surfaces to manifolds, and we use this generalization to compute
+						a $C^1$-surface interpolating a given set of manifold-valued data points associated to a regular 2D grid. 
+						We then propose an efficient algorithm to compute the control points defining the surface based on the Euclidean concept of natural $C^2$-splines 
+						and show examples on different manifolds.
+					</p>
+					<div class="paperQuote" id="cite_C04">
+<pre class="codeinput">@inproceedings{Absil2016a,
+  author    = {Absil, P.-A. and Gousenbourger, Pierre-Yves and Striewski, Paul and Wirth, Benedikt},
+  title     = {Differentiable piecewise-{B\'{e}}zier interpolation on {R}iemannian manifolds},
+  booktitle = {ESANN2016},
+  isbn      = {978--287587027--8},
+  publisher = {Springer},
+  pages     = {95--100},
+  year      = {2016}
+}</pre>
+					</div>
+				</li>
+				
+				
+				<!-- BMVC2015 -->
+				<li>
+					<div class="paperEntry">
+						<div>
+							C. Samir, P.-Y. Gousenbourger, S. H. Joshi.
+							<span class="paperTitle">Cylindrical Surface Reconstruction by Fitting Paths on Shape Space.</span>
+							<span class="paperJournal">EProceedings of the 1st International Workshop on DIFFerential Geometry in Computer Vision for Analysis of Shapes, Images and Trajectories (DIFF-CV 2015)</span>, 2015.
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_C03').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/bmvc2015.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a class="more" onclick="$('#cite_C03').slideToggle(400);"><img src="pics/icon_bib.png"></a></li>
+							<li><a href="http://www.bmva.org/bmvc/2015/index.html" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_C03">
+						We present a differential geometric approach for cylindrical anatomical surface reconstruction from 3D volumetric data that may have missing slices or discontinuities.
+						We extract planar boundaries from the 2D image slices, and parameterize them by an indexed set of curves. 
+						Under the SRVF framework, the curves are represented as invariant elements of a nonlinear shape space. 
+						Differently from standard approaches, we use tools such as exponential maps and geodesics from Riemannian geometry and solve the problem of surface reconstruction 
+						by fitting paths through the given curves. 
+						Experimental results show the surface reconstruction of smooth endometrial tissue shapes generated from MRI slices.
+					</p>
+					<div class="paperQuote" id="cite_C03">
+<pre class="codeinput">@inproceedings{Samir2015,
+  author = {Samir, Chafik and Gousenbourger, Pierre-Yves and Joshi, Shantanu H.},
+  booktitle = {DIFF-CV 2015},
+  pages  = {1--10},
+  title  = {{Cylindrical Surface Reconstruction by Fitting Paths on Shape Space}},
+  year   = {2015}
+}</pre>
+					</div>
+				</li>
+				
+				
+				
+				
+				<!-- GSI2015 -->
+				<li>
+					<div class="paperEntry">
+						<div>
+							A. Arnould, P.-Y. Gousenbourger, C. Samir, <a target="_blank" href="https://sites.uclouvain.be/absil/">P.-A. Absil</a>, M. Canis.
+							<span class="paperTitle">Fitting smooth paths on Riemannian manifolds: Endometrial surface reconstruction and preoperative MRI-based navigation.</span>
+							<span class="paperJournal">Nielsen, F. and Barbaresco F., editors, GSI2015</span>, pp. 491-498, 2015.
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_C02').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/gsi2015.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a class="more" onclick="$('#cite_C02').slideToggle(400);"><img src="pics/icon_bib.png"></a></li>
+							<li><a href="https://www.see.asso.fr/gsi2015" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_C02">
+						We present a new method to fit smooth paths to a given set of points on Riemannian manifolds using $C^1$ piecewise-Bézier functions. 
+						A property of the method is that, when the manifold reduces to a Euclidean space, the control points minimize the mean square acceleration of the path. 
+						As an application, we focus on data observations that evolve on certain nonlinear manifolds of importance in medical imaging: 
+						the shape manifold for endometrial surface reconstruction; the special orthogonal group $SO(3)$ and the special Euclidean group $SE(3)$ 
+						for preoperative MRI-based navigation. 
+						Results on real data show that our method succeeds in meeting the clinical goal: combining different modalities to improve the localization of the endometrial lesions.
+					</p>
+					<div class="paperQuote" id="cite_C02">
+<pre class="codeinput">@inproceedings{Arnould2015,
+  author  = {Arnould, Antoine and Gousenbourger, Pierre-Yves and Samir, Chafik and Absil, P.-A. and Canis, Michel},
+  title   = {{Fitting Smooth Paths on Riemannian Manifolds : Endometrial Surface Reconstruction and Preoperative MRI-Based Navigation}},
+  booktitle = {Geometric Science of Information},
+  doi     = {10.1007/978-3-319-25040-3_53},
+  editor  = {Nielsen, Frank and Barbaresco, Fr{\'e}d{\'e}ric},
+  publisher = {Springer},
+  address = {Berlin, Heidelberg},
+  series  = {Lecture Notes in Computer Sciences},
+  volume  = {9389},
+  pages   = {491--498},
+  year    = {2015}
+}</pre>
+					</div>
+				</li>
+				
+				
+				
+				
+				
+				<!-- ICPR2014 -->
+				<li>
+					<div class="paperEntry">
+						<div>
+							P.-Y. Gousenbourger, C. Samir, <a target="_blank" href="https://sites.uclouvain.be/absil/">P.-A. Absil</a>.
+							<span class="paperTitle">Piecewise-Bézier $C^1$ interpolation on Riemannian manifolds with application to 2D shape morphing.</span>
+							<span class="paperJournal">International Conference on Pattern Recognition (ICPR)</span>, pp. 4086-4091, 2014.
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_C01').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/icpr2014.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a class="more" onclick="$('#cite_C01').slideToggle(400);"><img src="pics/icon_bib.png"></a></li>
+							<li><a href="https://iapr.org/archives/icpr2014/" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_C01">
+						We propose a generalization of classical Euclidean piecewise-Bézier surfaces to manifolds, and we use this generalization to compute
+						a $C^1$-surface interpolating a given set of manifold-valued data points associated to a regular 2D grid. 
+						We then propose an efficient algorithm to compute the control points defining the surface based on the Euclidean concept of natural $C^2$-splines 
+						and show examples on different manifolds.
+					</p>
+					<div class="paperQuote" id="cite_C01">
+<pre class="codeinput">@inproceedings{Gousenbourger2014,
+  author = {Gousenbourger, Pierre-Yves and Samir, Chafik and Absil, P.-A.},
+  title  = {Piecewise-{B\'e}zier {$C^1$} interpolation on {R}iemannian manifolds with application to {2D} shape morphing},
+  booktitle = {International Conference on Pattern Recognition (ICPR)},
+  pages  = {4086--4091},
+  year   = {2014},
+  doi    = {10.1109/ICPR.2014.700},
+  isbn   = {9781479952083},
+  issn   = {10514651}
+}</pre>
+					</div>
+				</li>
+			</ul>
+			
+			
+			
+			
+			
+			<p class="subtitle">
+				<img style="padding-right: 10px;" height="20px" src="pics/icon_slides.png"> Talks
+			</p>
+      <ul class="papers">
+      <!-- ISPS2019 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Data fitting on manifolds: applications, challenges and solutions</span>
+							<div><span class="paperJournal">ISP Group</span>, Louvain-la-Neuve, Belgium. Dec. 11, 2019.</div>
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_T17').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="talks/isps2019_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><a target="_blank" href="https://sites.uclouvain.be/ispgroup/ISPS/HomePage"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_T17">
+						Storm trajectories prediction, birds migrations follow-up, rigid rotations of 3D objects, wind field estimation, model order reduction of superlarge parameter-dependent dynamical systems, MRI 3D body volumes reconstruction... All these applications have two things in common: first, they have a geometrical data-structure, i.e., the data lives on a (generally) Riemannian manifold; second, they can benefit of parameter(s)-dependent fitting methods somewhere in the process. If data fitting is a basic problem in the Euclidean space (where natural cubic splines and thin plates splines are the superstars in the domain), it become more intricate when data structure constrains the problem. 
+					<br/><br/>
+						This talk is an opportunity to present you an efficient, ready-to-use algorithm for data fitting on manifolds based on B\'ezier curves, applied to some of the aforementioned applications.
+					</p>
+				</li>
+      
+      
+        <!-- Benelux2019 -->
+        <li>
+          <div class="paperEntry">
+            <div class="talk">
+              <span class="paperTitle">Data fitting on manifolds by minimizing the mean square acceleration of a Bézier curve</span>
+              <div><span class="paperJournal">Benelux Meeting 2019</span>, Lommel, Belgium. Mar. 19, 2019.</div>
+            </div>
+            <ul class="icons">
+              <li><img src="pics/icon_white.png"></li>
+              <li><a target="_blank" href="pdf/blux2019.pdf"><img src="pics/icon_pdf.png"></a></li>
+              <li><a target="_blank" href="talks/blux2019_web.pdf"><img src="pics/icon_slides.png"></a></li>
+              <li><a target="_blank" href="http://www.beneluxmeeting.nl/2019/"><img src="pics/icon_doi.png"></a></li>
+            </ul>
+          </div>
+        </li>
+      
+        <!-- Chemnitz2018 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Curve fitting on manifolds with Bézier and blended curves</span>
+							<div><span class="paperJournal">Seminar at Research Group "Numerical Mathematics (Partial Differential Equations)", from TU Chemnitz</span>, Chemnitz, Germany. Jul. 18, 2018.</div>
+						</div>
+						<ul class="icons">
+							<li><img src="pics/icon_white.png"></li>
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="talks/chemnitz2018_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><a href="https://www.tu-chemnitz.de/mathematik/part_dgl/news.en.php" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+				</li>
+				
+				
+				
+				<!-- GSI2017 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Fast method to fit a $C^1$ piecewise-Bézier function to manifold-valued data points: how suboptimal is the curve obtained on the sphere $\mathbb S^2$?</span>
+							<div><span class="paperJournal">GSI2015</span>, Paris, France. Nov. 7, 2017.</div>
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_T14').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/gsi2017.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a target="_blank" href="talks/gsi2017_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><a href="https://www.see.asso.fr/gsi2017" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_T14">
+						We propose an analysis of the quality of the fitting method proposed in [<a href="https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2017-77.pdf" target="_blank">7</a>].
+						This method fits smooth paths to manifold-valued data points using $C^1$ piecewise-B ́ezier functions. 
+						This method is based on the principle of minimizing an objective function composed of a data-attachment term and a regularization term chosen as the mean squared
+						acceleration of the path. However, the method strikes a tradeoff between speed and accuracy by following a strategy that is guaranteed to yield
+						the optimal curve only when the manifold is linear. 
+						In this paper, we focus on the sphere $S^2$. 
+						We compare the quality of the path returned by the algorithms from [<a href="https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2017-77.pdf" target="_blank">7</a>] 
+						with the path obtained by minimizing, over the same search space of $C^1$ piecewise-B́ezier curves, a finite-difference approximation of the objective 
+						function by means of a derivative-free manifold-based optimization method.
+					</p>
+				</li>
+				
+				
+				
+				<!-- WIPS2017 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Wind field estimation via $C^1$ Bézier smoothing on manifolds</span>
+							<div><span class="paperJournal">Workshop on "Regularized Inverse Problem Solving and High-Dimensional Learning Methods" (WIPS)</span>, Louvain-la-Neuve, Belgium. Aug. 30, 2017.</div>
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_T13').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="talks/wips2017_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><a href="https://sites.google.com/view/wips-learn/programme" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_T13">
+						Unmanned aerial vehicle control is a hot topic in research and at the crossroad of a lot of disciplines. For instance, safe and reliable navigation of UAVs requires consideration of the surrounding environment, in particular, the external wind conditions. This external wind configuration is usually evaluated by computationnaly expensive efforts and depends on external meteorological parameters. Hopefully, it can be modelled as a Gaussian process characterized by a covariance matrix belonging to the space of PSD matrices of rank r. In this work, we both expoit the manifold structure of this specific space and also propose a method to fit a small set of pre-computed solutions. That way, for a new value of the external meteorological parameters, we are able to recover a sufficiently accurate wind field configuration in a computationnaly tractable effort. Our method is based on manifold-valued Bezier curves. Joint work with <a target="_blank" href="https://perso.uclouvain.be/estelle.massart/">E.M. Massart</a>, A. Musolas, <a target="_blank" href="https://sites.uclouvain.be/absil/">P.-A. Absil</a>, <a target="_blank" href="https://perso.uclouvain.be/julien.hendrickx/">J.M. Hendrickx</a>, <a target="_blank" href="https://perso.uclouvain.be/laurent.jacques/">L. Jacques</a> and <a target="_blank" href="https://aeroastro.mit.edu/youssef-marzouk">Y. Marzouk</a>.
+					</p>
+				</li>
+				
+				
+				
+				
+				<!-- ESANN2017 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Wind field estimation via $C^1$ Bézier smoothing on manifolds</span>
+							<div><span class="paperJournal">ESANN2017</span>, Bruges, Belgium. Apr. 27, 2017.</div>
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_T12').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/esann2017.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a target="_blank" href="talks/esann2017_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><a href="https://www.elen.ucl.ac.be/esann/" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_T12">
+						We propose an algorithm for fitting $C^1$ piecewise-Bézier curves to (possibly corrupted) data points on manifolds.
+						The curve is chosen as a compromise between proximity to data points and regularity.
+						We apply our algorithm as an example to fit a curve to a set of low-rank covariance matrices, a task arising in wind field modeling.
+						We show that our algorithm has denoising abilities for this application.
+					</p>
+				</li>
+				
+				
+				<!-- Benelux2017 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Wind field estimation via $C^1$ Bézier smoothing on manifolds</span>
+							<div><span class="paperJournal">Benelux Meeting 2017</span>, Spa, Belgium. Mar. 28, 2017.</div>
+						</div>
+						<ul class="icons">
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="pdf/blux2017.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a target="_blank" href="talks/blux2017_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><a target="_blank" href="http://www.beneluxmeeting.nl/2017/"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+				</li>
+				
+				
+				<!-- ISPS2017 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Interpolation and fitting on manifolds with differentiable piecewise-Bézier functions</span>
+							<div><span class="paperJournal">ISP Group</span>, Louvain-la-Neuve, Belgium. Mar. 16, 2017.</div>
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_T10').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="talks/isps2017_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><a target="_blank" href="https://sites.uclouvain.be/ispgroup/ISPS/HomePage"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_T10">
+						Fitting and interpolation are well known topics on the Euclidean space. However, when it turns out that the data points are manifold valued (understand: when the data point belongs to a certain manifold), most of the algorithms are no more applicable because even the notion of distance is not as simple as on the Euclidean space.
+					<br/><br/>
+						Manifold-valued data appear in various domains as MRI acquisition (diffusion tensors, segmented shapes,...), fluid mechanics (SDP matrices or values on the Grassmann manifold), matrix completion and many more. A particular example concern the representation of local wind fields in a given domain. These can be expressed as covariance matrices which are SDP and of fixed (small) rank. The wind field changes when the prevalent wind has different orientation or magnitude. The computation of this wind field, however, resort in solving complicated and time-consuming PDEs in fluid mechanics. In order to obtain approached solutions as fast as possible, a solution is to compute several wind field covariance matrices representations for a set of given orientation/magnitude of the prevalent wind and then interpolate (or fit) a manifold-valued curve in the space of fixed rand SDP matrices.
+					<br/><br/>
+						In this talk, I will propose a method to fit manifold-valued data points based on a generalization of Bezier curves. This method is motivated by (but not specific to) the wind field orientation problem. I will try to introduce the concepts of manifolds and Bezier curves as a tutorial to finally show interesting results for that specific application.
+
+
+
+					</p>
+				</li>
+				
+				
+				
+				
+				<!-- Floride2017 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Interpolation and fitting on manifolds with differentiable piecewise-Bézier functions</span>
+							<div><span class="paperJournal">Anuj Srivastava's working group meeting</span>, Skype presentation, Tallahassee, Florida, USA. Mar. 10, 2017.</div>
+						</div>
+						<ul class="icons">
+							<li><img src="pics/icon_white.png"></li>
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="talks/srivastava2017_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><a target="_blank" href="https://ani.stat.fsu.edu/~anuj/"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+				</li>
+				
+				
+				
+				
+				<!-- GAMM2017 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Differentiable Bézier interpolation on manifolds with B-splines</span>
+							<div><span class="paperJournal">GAMM 2017</span>, Weimar, Germany. Mar. 6, 2017.</div>
+						</div>
+						<ul class="icons">
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="pdf/gamm2017.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a target="_blank" href="talks/gamm2017_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><a target="_blank" href="https://jahrestagung.gamm-ev.de/index.php/2017/annual-meeting-2017"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+				</li>
+				
+				
+				
+				<!-- MVIP2016 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Interpolation and fitting on manifolds with differentiable piecewise-Bézier functions</span>
+							<div><span class="paperJournal">Workshop on Manifold-Valued Image Processing (MVIP) 2016</span>, Kaiserslautern, Germany. Dec. 2, 2016.</div>
+						</div>
+						<ul class="icons">
+							<li><img src="pics/icon_white.png"></li>
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="talks/mvip2016_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><img src="pics/icon_white.png"></li>
+						</ul>
+					</div>
+				</li>
+				
+				
+				<!-- Benelux2016 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Interpolation on manifolds with differentiable surfaces of Bézier</span>
+							<div><span class="paperJournal">Benelux Meeting 2016</span>, Soesterberg, The Netherlands. Mar. 24, 2016.</div>
+						</div>
+						<ul class="icons">
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="pdf/blux2016.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a target="_blank" href="talks/blux2016_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><a target="_blank" href="http://www.beneluxmeeting.nl/2016/"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+				</li>
+				
+				
+				
+				
+				<!-- ASCII2015 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Bézier interpolation on Riemannian manifolds</span>
+							<div><span class="paperJournal">ASCII Tutorial Seminars</span>, Louvain-la-Neuve, Belgium. Nov. 27, 2015.</div>
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_T05').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="talks/ascii2015_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><img src="pics/icon_white.png"></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_T05">
+						Mani-what you say?
+						Manifolds are mathematical sets with a smooth geometry (such as spheres) used in applications like model reduction, optimization and many more.
+						What do manifold-valued objects look like? 
+						Can we interpolate them? 
+						Is it costly? 
+						With Bézier functions, interpolation on manifolds becomes very easy.
+						Bézier? You should remember this from your bachelor, isn't it?
+						From a very few concepts and drawings, a variety of possibilities is open.
+					</p>
+				</li>
+				
+				
+				
+				
+				<!-- GSI2015 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Endometriosis: MRI navigation and surface reconstruction on manifolds</span>
+							<div><span class="paperJournal">GSI2015</span>, Paris, France. Oct. 30, 2015.</div>
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_T04').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/gsi2015.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a target="_blank" href="talks/gsi2015_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><a href="https://www.see.asso.fr/gsi2015" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_T04">
+						We present a new method to fit smooth paths to a given set of points on Riemannian manifolds using $C^1$ piecewise-Bézier functions. 
+						A property of the method is that, when the manifold reduces to a Euclidean space, the control points minimize the mean square acceleration of the path. 
+						As an application, we focus on data observations that evolve on certain nonlinear manifolds of importance in medical imaging: 
+						the shape manifold for endometrial surface reconstruction; the special orthogonal group $SO(3)$ and the special Euclidean group $SE(3)$ 
+						for preoperative MRI-based navigation. 
+						Results on real data show that our method succeeds in meeting the clinical goal: combining different modalities to improve the localization of the endometrial lesions.
+					</p>
+				</li>
+				
+						
+				
+				
+				
+				<!-- One Day 2015 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">How to design interpolating surfaces on manifolds?</span>
+							<div><span class="paperJournal">One-Day Workshop on manifolds optimization</span>, Louvain-la-Neuve, Belgium. Sep. 25, 2015.</div>
+						</div>
+						<ul class="icons">
+							<li><img src="pics/icon_white.png"></li>
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="talks/oneday2015_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><img src="pics/icon_white.png"></li>
+						</ul>
+					</div>
+				</li>
+				
+				
+				
+				
+				<!-- GDR MIA 2014 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Interpolation on Riemannian manifolds with a $C^1$ piecewize-Bézier path.</span>
+							<div><span class="paperJournal">GDR MIA 2014</span>, Paris, France. Nov. 21, 2014.</div>
+						</div>
+						<ul class="icons">
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="pdf/gdrmia2014.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a target="_blank" href="talks/gdrmia2014_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><img src="pics/icon_white.png"></li>
+						</ul>
+					</div>
+				</li>
+				
+				
+				
+				<!-- ISPS -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Interpolation on Riemannian manifolds with a $C^1$ piecewize-Bézier path.</span>
+							<div><span class="paperJournal">ISP Group</span>, Louvain-la-Neuve, Belgium. Oct. 8, 2014.</div>
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_T01').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="talks/isps2014_web.pdf"><img src="pics/icon_slides.png"></a></li>
+							<li><a href="https://sites.uclouvain.be/ispgroup/ISPS/HomePage" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_T01">
+						Nowadays, more and more problems are solved through specific manifold formulation. This often allows important reduction of computation time and/or memory management compared to classical formulations on the classical Euclidean space (because of non-linear constraints like restricting the solutions to a certain subdomain of a larger ambiant space). Interpolation and optimization tools can be useful for solving some of these problems (like defining the optimal trajectory of a humanitory plane dropping supplies, or fitting two objects orientations). However, current procedures are only defined on the Euclidean space. In this presentation, I focus on interpolation methods and, more precisely, I propose a new general framework to fit a path through a finite set of data points lying on a Riemannian manifold. The path takes the form of a continuously-differentiable concatenation of Riemannian Bézier segments. This framework will be illustrated by results on the Euclidean space, the sphere, the orthogonal group and the shape manifold.​ The content of this presentation meets also very recent research carried out in this institute for providing novel efficient manifold-based optimization methods.
+					</p>
+				</li>
+			</ul>
+			
+			
+			
+			
+			
+			<p class="subtitle">
+				<img style="padding-right: 10px;" height="20px" src="pics/icon_poster.png"> Posters
+			</p>
+      <ul class="papers">
+				<!-- ESANN2019 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Interpolation on the manifold of fixed-rank positive-semidefinite matrices for parametric model order reduction: preliminary results.</span>
+							<div><span class="paperJournal">Conference ESANN 2019</span>, Bruges, Belgium, 2019.</div>
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_P06').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/esann2019.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a target="_blank" href="posters/esann2019.pdf"><img src="pics/icon_poster.png"></a></li>
+							<li><a href="https://www.elen.ucl.ac.be/esann/" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_P06">
+						We present several interpolation schemes on the manifold of fixed-rank positive-semidefinite (PSD) matrices.
+						We explain how these techniques can be used for model order reduction of parameterized linear dynamical systems, 
+						and obtain preliminary results on an application.
+					</p>
+				</li>
+      
+      
+      
+      
+				<!-- iTwist2018 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Blended smoothing splines on Riemannian manifolds.</span>
+							<div><span class="paperJournal">Conference iTwist 2018</span>, Marseille, France, 2018.</div>
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_P05').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/itwist2018.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a target="_blank" href="posters/itwist2018.pdf"><img src="pics/icon_poster.png"></a></li>
+							<li><a href="https://arxiv.org/html/1812.00648" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_P05">
+						We present a method to compute a fitting curve $B$ to a set of data points $d_0,\dots, d_m$ lying on a manifold $\mathcal M$. 
+						That curve is obtained by blending together Euclidean Bézier curves obtained on different tangent spaces. 
+						The method guarantees several properties among which $B$ is $C^1$ and is the natural cubic smoothing spline when $\mathcal M$ is the Euclidean space. 
+						We show examples on the sphere $S^2$ as a proof of concept.
+					</p>
+				</li>
+				
+				
+				
+				
+				<!-- Gimli2018 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Data fitting on manifolds with blended cubic splines.</span>
+							<div><span class="paperJournal">ICML2018, workshop GiMLi</span>, Stockholm, Sweden, 2018.</div>
+						</div>
+						<ul class="icons">
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="pdf/gimli2018.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a target="_blank" href="posters/gimli2018.pdf"><img src="pics/icon_poster.png"></a></li>
+							<li><img src="pics/icon_white.png"></li>
+						</ul>
+					</div>
+				</li>
+				
+				
+				
+				<!-- iTwist2016 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Interpolation on manifolds using Bézier functions.</span>
+							<div><span class="paperJournal">Conference iTwist 2018</span>, Aalborg, Denmark, 2016.</div>
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_P03').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/itwist2016.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a target="_blank" href="posters/itwist2016.pdf"><img src="pics/icon_poster.png"></a></li>
+							<li><img src="pics/icon_white.png"></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_P03">
+						Given a set of data points lying on a smooth manifold, we present methods to interpolate those with piecewise Bézier splines. 
+						The spline is composed of Bézier curves (resp. surfaces) patched together such that the spline is continuous and differentiable at any point of its domain. 
+						The spline is optimized such that its mean square acceleration is minimized when the manifold is the Euclidean space. 
+						We show examples on the sphere $S^2$ and on the special orthogonal group $SO(3)$.
+					</p>
+				</li>
+				
+				
+				<!-- ESANN2016 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Differentiable piecewise-Bézier interpolation on Riemannian manifolds.</span>
+							<div><span class="paperJournal">Conference ESANN2016</span>, Bruges, Belgium, 2016.</div>
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_P02').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/esann2016.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a target="_blank" href="posters/esann2016.pdf"><img src="pics/icon_poster.png"></a></li>
+							<li><a href="https://www.elen.ucl.ac.be/esann/" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_P02">
+						We propose a generalization of classical Euclidean piecewise-Bézier surfaces to manifolds, and we use this generalization to compute
+						a $C^1$-surface interpolating a given set of manifold-valued data points associated to a regular 2D grid. 
+						We then propose an efficient algorithm to compute the control points defining the surface based on the Euclidean concept of natural $C^2$-splines 
+						and show examples on different manifolds.
+					</p>
+				</li>
+				
+				
+				
+				<!-- DyscoDay2014 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Piecewise-Bézier $C^1$ interpolation on Riemannian manifolds with application to 2D shape morphing.</span>
+							<div><span class="paperJournal">Dysco Day</span>, Gent, Belgium, 2014.</div>
+						</div>
+						<ul class="icons">
+							<li><img src="pics/icon_white.png"></li>
+							<li><img src="pics/icon_white.png"></li>
+							<li><a target="_blank" href="posters/pai2014.pdf"><img src="pics/icon_poster.png"></a></li>
+							<li><img src="pics/icon_white.png"></li>
+						</ul>
+					</div>
+				</li>
+				
+				
+				
+				<!-- ICPR2014 -->
+				<li>
+					<div class="paperEntry">
+						<div class="talk">
+							<span class="paperTitle">Piecewise-Bézier $C^1$ interpolation on Riemannian manifolds with application to 2D shape morphing.</span>
+							<div><span class="paperJournal">International Conference on Pattern Recognition (ICPR)</span>, pp. 4086-4091, 2014.</div>
+						</div>
+						<ul class="icons">
+							<li><a class="more" onclick="$('#abs_P00').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+							<li><a target="_blank" href="pdf/icpr2014.pdf"><img src="pics/icon_pdf.png"></a></li>
+							<li><a target="_blank" href="posters/icpr2014.pdf"><img src="pics/icon_poster.png"></a></li>
+							<li><a href="https://iapr.org/archives/icpr2014/" target="_blank"><img src="pics/icon_doi.png"></a></li>
+						</ul>
+					</div>
+					<p class="paperAbstract" id="abs_P00">
+						We present a new framework to fit a path to a given finite set 
+            of data points on a Riemannian manifold. The path takes the 
+            form of a continuously-differentiable concatenation of Riemannian 
+            Bézier segments. The selection of the control points that define 
+            the Bézier segments is partly guided by the differentiability 
+            requirement and by a minimal mean squared acceleration objective. 
+            We illustrate our approach on specific manifolds: 
+            the Euclidean plane (for sanity check), the sphere (as a first 
+            nonlinear illustration), the special orthogonal group (with 
+            rigid body motion applications), and the shape manifold (with 
+            2D shape morphing applications).
+					</p>
+				</li>
+				
+			</ul>
+		</article> <!-- corps -->
+	</section>
+</div><!-- Publications -->
+	
+	
+	<!-- Teaching -->
+	<div name="Teaching" id="sec-teaching" style="display: none" class="tab">
+		<section>
+			<aside class="image-left"><a href="http://www.uclouvain.be"><img title="UCL" class="rounded-pic" src="pics/ucl.png" width=100%/></a></aside>
+			
+			<article>
+				<p style="margin-top:0">
+					I'm currently a teaching assistant at <a href="http://www.uclouvain.be">UCL</a>, supervising the practical sessions both at <a href="http://www.uclouvain.be/epl">EPL</a> (the engineer school of UCL) and at <a href="http://www.uclouvain.be/espo">ESPO</a> (the faculty of Economic, Social and Political Sciences and Communication). Working on two very different contexts is very rewarding, by ythe way: think about it if you follow the same curriculum as me ;-).</p>
+				<p>
+					As a TA, I have the opportunity to participate to new pedagogical methodologies. At EPL, we apply the so-called "APP" methodology (Apprentissage Par Projet). In this methodology, the students learn of (simplified) real-life situations. The teacher and assistants are there to guide them in their learning, verifying that they go in the good direction... and that they actually learn something useful for the class !
+				</p>
+				<p>
+					I also had the opportunity to participate to <a href="https://aipu2016.wordpress.com/">AIPU2016</a> a conference about pedagogy at university level.
+				</p>
+				<p class="subtitle">
+					As a PhD:
+				</p>
+					<ul>
+						<li>FSAB1101: Mathematique 1</li>
+						<li>FSAB1102: Mathematique 2</li>
+						<li>FSAB1106: Signaux et Systèmes</li>
+						<li>INGE1213: Physique 2</li>
+						<li>INGI2348: Information theory</li>
+						<li>FSAB2995: Stages en entreprise (Internships)</li>
+					</ul>
+				<p class="subtitle">
+					During my studies to become an engineer:
+				</p>
+				<p>
+					<ul>
+						<li>FSAB1104: Méthode numériques</li>
+						<li>Support teaching in maths and the sciences at <a href="http://www.amo-noh.net">AMO-NOH</a> for dropout students with financial difficulties.</li>
+					</ul>
+				</p>
+			</article> <!-- corps -->
+		</section>
+	</div><!-- Teaching -->
+
+
+	<!-- Numerical tour -->
+	<div name="Numerical Tour" id="sec-nt" style="display: none" class="tab">
+		<section>
+			<aside class="image-left"><a href="http://nl.mathworks.com"><img title="Matlab" class="rounded-pic" src="pics/matlab.png" width=100%/></a></aside>
+			
+			<article>
+				<p class="subtitle">
+					Bidimensional interpolation with Bézier spline
+				</p>
+				<p>
+					We are given a set of data points in the Euclidean space associated with two timestamps (m,n) organised on a regular grid. These timestamps give the order in which points must be interpolated. In this problem, for visualization convenience and without loss of generality, the (x,y) value of the data points correspond to the regular grid (m,n) and the z-value is randomly chosen. The points are organized in a 2D-cell corresponding to the order of interpolation.</p>
+				<p>
+					From these data points, the goal here is to draw a 2d-Bézier spline interpolating those in a C^1 way. For this, you can use our code here, general for manifolds. The possible manifolds are the Euclidean space, the sphere and the special orthogonal group SO(3).</p>
+				<div style="display: none" id="nt-bezier-surfaces">
+					<h2 class="code">The code</h2>
+						<p>Here is the code for interpolating data with a 2d-Bézier spline.</p>
+
+<pre class="codeinput"><span class="comment">% Some random data points.</span>
+m = 6; n = 7;
+data = cell(m,n);
+<span class="keyword">for</span> i=1:m
+<span class="keyword">for</span> j=1:n
+  data{i,j} = [i-1,j-1,randn(1)];
+<span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="comment">% Some useful information...</span>
+manifold = <span class="string">'euclidean'</span>;
+set_path
+global_variables
+geo_functions
+
+<span class="comment">% Create the problem structure.</span>
+problem  = prepare_structure(data,manifold,10);
+
+<span class="comment">% Phase 1: Control points generation.</span>
+problem = control_points_simple_generation_2d(problem);
+
+<span class="comment">% Phase 2: Reconstruction of the curve.</span>
+problem = curve_reconstruction_double_bezier_c1(problem,1); <span class="comment">% horizontal-vertical</span>
+
+<span class="comment">% Plotting</span>
+figure;
+draw_bezier_surface(problem);
+title([<span class="string">'Bezier surface with method: '</span>,problem.method,<span class="string">'.'</span>]);</pre>
+
+						<p>Okay, let's dig a bit into that...</p>
+						
+
+
+					<h2 class="code">Data points</h2>
+						<p>As mentionned, the data points must be stored in a 2d-cell. Let's construct a random set of data points where the (x,y)-values correspond to (m,n) and the z-value is random.</p>
+						<p>Hint: You may also call <code>data_points_2d(manifold,type)</code> to create some predefined test sets.</p>
+						
+
+<pre class="codeinput">m = 6; n = 7;
+data = cell(m,n);
+<span class="keyword">for</span> i=1:m
+<span class="keyword">for</span> j=1:n
+  data{i,j} = [i-1,j-1,randn(1)];
+<span class="keyword">end</span>
+<span class="keyword">end</span></pre>
+						
+					<h2 class="code">Problem structure preparation</h2>
+						<p>The system is based on a structure called successively by different subfunctions in matlab. Each subfunction will use elements of differential geometry (the exponential, the logarithm, the distance, etc.). This is why this preparation step is crucial in order to inform the computer on the paths needed (the script set_path depends on the manifold) and on the elements of differential geometry available for the code (global_variables and geo_functions depend on the manifold).</p>
+						
+<pre class="codeinput">manifold = <span class="string">'euclidean'</span>;
+
+<span class="comment">% define the paths where the manifold-tools are stored</span>
+set_path
+<span class="comment">% define the global variables, i.e. the elements of differential geometry.</span>
+global_variables
+geo_functions</pre>
+						
+						<p>Create the problem structure.</p>
+						
+<pre class="codeinput"><span class="comment">% the structure stored the name of the manifold, the data points and the discretization of the surface when reconstructed.</span>
+problem  = prepare_structure(data,manifold,10);</pre>
+						
+						<p>The structure should look like</p>
+						
+<pre class="codeoutput">problem = 				
+      interp: {6x7 cell}
+        type: ''
+    manifold: 'euclidean'
+           n: 6
+           m: 7
+        dim1: 1
+        dim2: 3
+           d: []
+           t: 10
+        nint: 0</pre>
+					
+					
+					<h2 class="code">Bézier spline optimization and reconstruction</h2>
+						<p>The interpolation problem works in two steps: </p>
+						<ol>
+							<li>find the control points leading the Bézier curve</li>
+							<li>reconstruct the actual spline.</li>
+						</ol>
+						
+					
+					<h3 class="code">Phase 1: Control points generation</h3>
+						<p>The subfunction takes the structure as entry and will update it by adding the computed control points.</p>
+						
+<pre class="codeinput">problem = control_points_simple_generation_2d(problem);</pre>
+						
+						<p>There exist different methods to compute the control points:</p>
+						<ul>
+							<li>
+								<code>control_points_generation(problem)</code>: By an exact technique minimizing the Euclidean acceleration of the path. Warning, this technique is costly in time when the log and exp are not trivial. The technique is documented in the <a href="http://sites.uclouvain.be/absil/2015.10">technical report of 2015</a>.
+							</li>
+							<li>
+								<code>control_points_simple_generation_2d(problem)</code> With an efficient but not perfect algorithm based on the B-spline representation of curves generalized to surfaces. This technique is documented in <a href="#research">ESANN2016</a>
+							</li>
+							<li>
+								<code>control_points_double_tensorization(problem)</code> With the same efficient algorithm but applied to 1D curves horizontally and then vertically. The technique is also documented in <a href="#research">ESANN2016</a>
+							</li>
+						</ul>
+						<p>In the Euclidean space, all these techniques are identical.</p>
+						
+					<h3 class="code">Phase 2: Reconstruction of the curve</h3>
+						<p>Here also, the subfunction takes the structure as entry and will update it by adding the computed spline. If the structure does not contain the control points, the reconstruction is not possible.</p>
+<pre class="codeinput">problem = curve_reconstruction_double_bezier_c1(problem,1); <span class="comment">% horizontal-vertical</span></pre>
+
+						<p>There also exist different techniques to reconstruct the Bézier spline. The following ones return a C^1 surface. They are documented in <a href="http://sites.uclouvain.be/absil/2015.10">technical report of 2015</a>.</p>
+						<ul>
+							<li>
+								<code>curve_reconstruction_mean_all_c1(problem)</code> uses the altered defintion of Bezier surfaces based on averaging of all control points of the patch.
+							</li>
+							<li>
+								<code>curve_reconstruction_double_bezier_c1(problem,k)</code> uses the altered definition of Bezier curves horizontal-vertical (k=1) or vertical-horizontal (k=2) depending on the argument.
+							</li>
+						</ul>	
+						<p>The two following ones return a C^0 surface and their limits are also discussed in the <a href="http://sites.uclouvain.be/absil/2015.10">technical report of 2015</a>.</p>
+						
+						<ul>
+							<li>
+								<code>curve_reconstruction_mean_all(problem)</code> uses the basic definition of Bezier surfaces based on averaging of all the points of the patch.
+							</li>
+							<li>
+								<code>curve_reconstruction_double_bezier(problem,k)</code> uses the basic definition of Bezier curves horizontal-vertical (1) or vertical-horizontal (2) depending on the argument.
+							</li>
+						</ul>
+					
+					<h2 class="code">Plotting</h2>
+						<p>We propose a method to plot the solution. The plotting method is chosen based on the manifold and on the paths set at the beginning.</p>
+<pre class="codeinput">figure;
+draw_bezier_surface(problem);
+title([<span class="string">'Bezier surface with method: '</span>,problem.method,<span class="string">'.'</span>]);
+</pre>
+						<p><img src="pics/nt_eucl_2d_surface.png" class="rounded-pic" width=100%/></p>
+				</div>
+				<p class="more" onclick="$('#nt-bezier-surfaces').slideToggle(400);">Show/hide the code tutorial.</p>
+				<a href="codes/bezier-surface.zip">Download the code.</a>
+			</article> <!-- corps -->
+		</section>
+	</div><!-- Numerical tour -->
+
+
+	
+	<!-- Contact -->
+	<div name="Contact" id="sec-contact" style="display: none" class="tab">
+		<section  class="sect-contact">			
+			<article style="width:350px">
+				<p style="margin-top:0">
+					<b>Pierre-Yves Gousenbourger</b><br/>
+					Bâtiment Stevin (ELEN)<br/>
+					Place du Levant, 2 box L5.04.04<br/>
+					B-1348 Louvain-la-Neuve<br/>
+					Belgium
+				</p>
+				<p>
+					Office: a.159 (1st floor) <br/>
+					Phone: +32.10.472307 <br/>
+					Fax: +32.10.472460 <br/>
+					Email: pierre-yves.gousenbourger@uclouvain.be
+				</p>
+			</article> <!-- corps -->
+			
+			<iframe 
+				src="https://www.google.com/maps/embed/v1/place?q=%C3%89cole%20Polytechnique%20de%20Louvain&key=AIzaSyCLYa7rRLt0rdGajdKYW1hXFY1JMPeGd_g" 
+				style="border:0" 
+				allowfullscreen="" 
+				frameborder="0"
+				height="400px"
+				class="image-right">
+					&amp;amp;amp;amp;nbsp; 
+			</iframe>
+		</section> 
+	</div> <!-- Contact -->
+	
+	
+	<script language="javascript">
+		var lastModif=document.lastModified; 
+		var dateModif = new Date(lastModif); 
+		var day = dateModif.getDate(); 
+		var month=dateModif.getMonth(); 
+		var year=dateModif.getYear();
+	</script>
+	
+	<!-- Footer -->
+	<footer>
+		Created and designed by Pierre-Yves Gousenbourger.<br/>
+		Last update: March 9, 2017.
+	</footer>
+
+
+
+
+	<!-- =================      Javascript      ==================== -->
+	<!--    a little bit of scripting for the menu: Thx Matthew !    -->
+	<!-- =========================================================== -->
+	
+	<!-- Utils for show-hide and tex -->
+    <script src="utils/jquery.min.js"></script>
+    <script src="utils/bootstrap.min.js"></script>    
+    
+    <!-- Show/hide sections -->
+    <script src="utils/navigation.js"></script>
+
+	</div>
+</body>
+</html>
+<!-- end of document -->

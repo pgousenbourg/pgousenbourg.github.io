@@ -1,0 +1,450 @@
+/* ======================= General settings ========================= */
+
+body {
+/*
+	background-color: #f7f7f7;
+*/
+	background-color: #f1f3f8;
+	font-family: 'Hind', 'Source Sans Pro', sans-serif, serif, monotype;
+	font-size: 100%;
+	height: 100%;
+	width: 95%;
+	max-width: 1100px;
+	margin: auto;					/* Centers the page if applicable */
+	padding: 0;
+	overflow-y: scroll;
+}
+
+.centered {
+	padding-top:10px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-color: #ffffff;
+	min-height: 95%;
+}
+
+header p.name, p.subtitle, p.more {
+	font-family: 'Roboto Slab', 'Source Sans Pro', sans-serif, serif, montype;
+	/*font-weight: bold;*/
+}
+
+@media all and (max-width: 812px)
+{
+	body {
+		width: 100%;
+	}
+	.centered {
+		padding: 1% 3% 1% 3%;
+	}
+}
+
+
+p {	text-align: justify;}
+
+a { text-decoration: none; color: #3973ac; }
+
+p.subtitle{
+	font-size: 110%;
+	padding-bottom: 0;
+	margin: 0;
+}
+
+p.more, a.more {
+	cursor: pointer;
+	text-align: right;
+	font-size: 90%;
+}
+
+/* ===================== CSS styles for header ====================== */
+
+header {
+	margin-top:48px;
+	margin-bottom:40px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header p.name {
+	color: black;
+    font-size: 275%;
+    margin: 0;
+    text-align: left;
+}
+
+header p.subname, p.subname_950, p.subname_800 {
+	color: grey;
+	font-size: 180%;
+	margin: 0;
+	text-align: left;
+}
+
+header p.subname_950, header p.subname_800 {
+	display: none;
+}
+
+@media all and (max-width: 1000px)
+{
+	header p.subname {
+		display: none;
+	}
+    header p.subname_950 {
+		display: block;
+	}
+}
+
+@media all and (max-width: 930px)
+{
+	header {
+		margin-top: 15px;
+	}
+	
+	header p.name {
+		font-size: 200%;
+	}
+	
+	header p.subname_950 {
+		display:none;
+	}
+    header p.subname_800 {
+		display: block;
+		font-size: 140%;
+	}
+}
+
+@media all and (max-width: 350px)
+{
+	.icteam {
+		display: none;
+	}
+}
+
+/* =============== CSS styles for navigation list =================== */
+
+nav {
+	margin: auto;
+	white-space: nowrap;
+	padding-bottom: 20px;
+}
+
+.nav_800 {
+	display: none;
+}
+
+nav > ul {
+	list-style-type: none;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+/*
+	border-bottom: 2px solid #e0e0e0;
+*/
+	border-bottom: 2px solid #3973ac;
+}
+
+nav > ul > li {
+	padding: 10px 25px;
+}
+
+nav > ul > li > a:hover {
+/*
+	background-color: #e0e0e0;
+*/
+	background-color: #3973ac;
+	color: #ffffff;
+/*
+	font-weight: bold;
+*/
+}
+
+nav > ul > li > a {
+	text-decoration: none;
+	padding: 10px 20px;
+	color: black;
+}
+
+nav > ul > li.active > a {
+	cursor: default;
+	/*background-color: #e0e0e0;*/
+	background-color: #3973ac;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+@media all and (max-width: 1120px)
+{
+	nav > ul > li {
+		padding: 8px 10px;
+	}
+}
+
+
+@media all and (max-width: 900px)
+{
+	nav > ul > li {
+		padding: 8px 5px;
+	}
+}
+
+
+@media all and (max-width: 830px)
+{
+	.nav {
+		display: none;
+	}
+	.nav_800 {
+		display: inline;
+	}
+	
+	nav > ul {
+		border: 0;
+		justify-content: center;
+		margin-bottom: 30px;
+	}
+	
+	nav > ul > li {
+		padding: 0 20px;
+		margin: 0;
+		width: 6.5%;
+	}
+
+	nav > ul > li > a:hover {
+		border-bottom: solid 2px #3973ac;
+		background-color: transparent;
+	}
+
+	nav > ul > li > a {
+		padding: 10% 25%;
+	}
+
+	nav > ul > li.active > a {
+		cursor: default;
+		background-color: transparent;
+		border-bottom: solid 2px #3973ac;
+	}
+}
+
+
+/* =================== CSS styles for sections ====================== */
+
+section {
+	margin: auto;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 2em;
+}
+
+article {
+	text-align: justify;
+	float: none;
+	overflow: hidden;
+	min-height: 270px;
+	width: 74%;
+	margin-left: 20px;
+/*
+	margin-bottom: 10px;
+*/
+}
+
+.image-left {
+	margin: 0 20px 20px 0;
+	width: 30%;
+	max-height: 250px;
+	max-width: 250px;
+}
+
+.image-right {
+	margin: 0 0 0 20px;
+	width: 55%;
+}
+
+
+@media all and (max-width: 830px)
+{
+	section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.sect-contact {
+		align-items: stretch;
+	}
+	
+	article {
+		min-height: auto;
+		width: 100%;
+		margin-left: 0;
+	}
+	
+	.image-left {
+		margin: 0 0 20px 0;
+		width: 50%;
+		max-width: 200px;
+		max-height: 100%;
+	}
+	
+	.image-right {
+		width: 100%;
+		min-height: 200px;
+		margin: 0;
+	}
+}
+
+
+/* ==================== CSS styles for publications ================= */
+
+ul.papers, ul.icons {
+	list-style-type: none;
+}
+
+ul.papers {
+	padding-left: 0px;
+	padding-bottom: 20px;
+}
+
+div.paperEntry {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+ul.papers > li {
+	padding-bottom: 20px;
+}
+
+.talk {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.paperTitle {
+	font-weight: bold;
+}
+
+.paperJournal {
+	font-style: italic;
+}
+
+.paperAbstract, .paperQuote {
+	display: none;	
+	margin-left: 10px;
+}
+
+.paperAbstract {
+	padding-left: 10px;
+	border-left: 2px solid #e3e3e3;
+}
+
+.paperQuote {
+	padding-top: 10px;
+}
+
+ul.icons {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	padding-left: 15px;
+}
+
+ul.icons img
+{
+	width: 20px;
+}
+
+ul.icons > li {
+	padding: 0 0 0 5px;
+}
+
+@media all and (max-width: 830px)
+{
+	div.paperEntry {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	
+	ul.icons {
+		padding-top: 1em;
+	}
+}
+
+
+/* ==================== CSS styles for text ========================= */
+
+
+blockquote {
+	margin: 0 30px 24px;
+	padding: 12px 24px;
+	border-left: 2px solid grey;
+	background-color: #DDE9ED;
+}
+
+
+
+/* ===================== CSS styles for footer ====================== */
+
+footer {
+	margin: auto;
+	margin-top: 20px;
+	padding: 10px 0 20px 0;
+	text-align: center;
+	font-size: 80%;
+}
+
+
+
+
+/* ==================== CSS styles for maths ======================== */
+
+.math{	text-align: center; }
+
+/* =================== CSS styles for images ======================== */
+.rounded-pic {	border-radius: 10px; }
+
+
+
+/* ================= CSS styles for matlab code ===================== */
+
+
+h2.code, h3.code {
+	margin: 20px 40px 0 0 ;
+	font-size: 100%;
+	color: #e95325;
+}
+
+h3.code {
+	font-weight: normal;
+}
+
+pre { font-size:12px;}
+pre { margin:0px 0px 20px; white-space: pre-wrap; }
+pre.codeinput { 
+	padding:10px; 
+	border:1px solid #d3d3d3; 
+	background:#f7f7f7;
+}
+pre.codeoutput { 
+	padding:10px 11px; 
+	margin:0px 0px 20px; 
+	color:#4c4c4c; 
+}
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.keyword { color:#0000FF }
+
+code {
+	background-color: #e5e7ff;
+}

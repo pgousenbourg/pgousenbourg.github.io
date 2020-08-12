@@ -1,0 +1,20 @@
+% PLOT_EUCL
+% Plot in the euclidean case the Bézier function (f) interpolating the
+% interpolation points (p) and driven by the control points (b).
+
+function plot_eucl(p,b,f)
+    p = cell2mat(p);
+    b = cell2mat(b);
+    
+    switch length(p(1));
+        case 2
+            plot(f(:,1,:), f(:,2,:),'b','LineWidth',2);
+            hold on;
+            plot(p(:,1),p(:,2),'.r','Markersize',30);
+            plot(b(:,1),b(:,2),'.','Color',[0 0.7 0],'Markersize',30);
+        case 3
+            
+        otherwise
+            disp('Dimension to high. Impossible to represent the function.');
+    end
+end

@@ -1,0 +1,104 @@
+%% CURVE-RECONSTRUCTION-MEAN -
+%       Reconstrucs the Bezier curve based on the interpolation points and 
+%       the control points given in the structure pb. The piecewize Bezier
+%       curve is assumed to be composed of segments of degree 2 on the
+%       first and last segment, and 
+%
+%  INPUT: * pb : the structure of the interpolation problem containing:
+%               pb.interp (cell{n x 1})     : the interpolation points;
+%               pb.control (cell{2n - 4})   : the control points;
+%               pb.t                        : the number of time steps for
+%                                             the segments.
+% 
+%  OUTPUT: pb : the structure updated with the curve pb.curve stored in a
+%  tensor.
+
+function pb = curve_reconstruction_mean(pb)
+    disp('--------------------------------------------------------------');
+    disp('Reconstruction of the Bezier curve.');
+    
+    % data
+    b       = pb.control;
+    t       = pb.t;
+    d       = pb.d;
+    p 		= pb.interp;
+    
+    % The curve is a different object following of the manifold.
+    vt 		= linspace(0, 1, t);
+    curve 	= zeros(pb.n,pb.m,pb.dim1,pb.dim2); 	% Curve is a tensor
+													% n x m (rectangle parametrization)
+													% dim1xdim2 (points)
+	
+	
+	% Waitbar just because it is fun ^^.
+    tStart = tic;
+    
+    % De Casteljau
+    for i=1:t
+		for j=1:t
+			curve(i,j,:,:) = de_casteljau_mean(b,d,vt(i),vt(j));
+		end
+	end
+	%curve = cell(t,t);
+	%curve2 = curve;
+    
+    %for t1= 1:t
+	%	for t2= 1:t
+	%		x0 = [0,0,0];
+	%		[x, fval] = fminsearch(@(x) f(x,vt(t1),vt(t2),p), x0);
+	%				
+	%		curve{t1,t2} = x;
+	%		w = [(1-vt(t1))*(1-vt(t2)), (1-vt(t2))*vt(t1), (1-vt(t1))*vt(t2), vt(t1)*vt(t2)];
+	%		s = p{1} - p{1};
+	%		for k = 1:4
+	%			s =  s + w(k)*p{k};
+	%		end
+	%		curve2{t1,t2} = s ;
+	%	end
+	%end
+	
+	%figure;
+	%hold on;
+	%for i=1:4
+	%	pp = p{i};
+	%	plot3(pp(1),pp(2),pp(3),'.r','MarkerSize',30);
+	%end
+	%for i = 1:t
+	%	for j= 1:t
+	%		x = curve{i,j};
+	%		plot3(x(1),x(2),x(3),'.b');
+	%		y = curve2{i,j};
+	%		plot3(y(1),y(2),y(3),'.g');
+	%	end
+	%end
+    
+    % Waitbar
+    %perc = 1/(n-1);
+    %waitbar(perc,h,sprintf(...
+    %        'Processing the De Casteljau algorithm. Complete: %.f %%.',...
+    %        perc*100));
+    %close(h);
+    tEnd = toc(tStart);
+    
+    %% Store
+    pb.curve = curve;
+    disp(['   Piercewise Bezier curve: ok in ',num2str(tEnd),'s!']);
+end
+
+
+% q are the coordinates of the searched point, computed with respect
+% to interpolation points.
+% 
+% 			3-----------4
+% 			|			|
+% 			|			|
+% 			|		   	|
+% 			1-----------2
+function output = f(q,t1,t2,p)
+	w = [(1-t1)*(1-t2), (1-t2)*t1, (1-t1)*t2, t1*t2];
+	dist = zeros(4,1);
+	for i = 1:4
+		dist(i) = dist_eucl(p{i},q);
+	end
+	output = w*dist;
+end

@@ -1,0 +1,41 @@
+% PLOT_SPHERE
+% Plot on SO(3) the Bézier function (f) interpolating the
+% interpolation points (p) and driven by the control points (b).
+
+function plot_so3(p,b,f,object)
+    if nargin == 3
+        object = 'ellipsoid';
+    end
+    
+    switch object
+        case 'ellispoid'
+            [Xs Ys Zs] = ellipsoid(0, 0, 0, 1, .5, .5, 30);
+            plotrot(f{1},'red');
+            
+            for i = 1:length(p)-1
+                for j = (i-1)*(t-1) + 2:i*(t-1)
+                    plotrot(f{j},[203 220 237]/255);                    
+                end
+                
+                plotrot(f{i*(t-1)+1},'red');
+            end
+            
+        case 'car'
+            disp('Plot of the rotating car: to do');
+        case 'satellite'
+            disp('Plot of the rotating satellite: to do');
+        otherwise; error('Unknown object');
+    end
+    title('Bezier path');
+end
+
+function plotrot(x,color)
+    S = x*[Xs(:).'; Ys(:).'; Zs(:).'];
+    Xr = reshape(S(1,:), size(Xs));
+    Yr = reshape(S(2,:), size(Ys));
+    Zr = reshape(S(2,:), size(Zs));
+
+    clf;
+    hold on;
+    surf(Xr,Yr,Zr,'Facecolor',color);
+end
