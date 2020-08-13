@@ -1,9 +1,6 @@
 /* ======================= General settings ========================= */
 
 body {
-/*
-	background-color: #f7f7f7;
-*/
 	background-color: #f1f3f8;
 	font-family: 'Hind', 'Source Sans Pro', sans-serif, serif, monotype;
 	font-size: 100%;
@@ -15,13 +12,22 @@ body {
 	overflow-y: scroll;
 }
 
+.wrapper {
+	width: 98%;
+	max-width: 1200px;
+	margin: auto;
+	text-align: justify;
+}
+
 .centered {
 	padding-top:10px;
 	padding-bottom: 20px;
 	padding-left: 40px;
 	padding-right: 40px;
 	background-color: #ffffff;
+/*
 	min-height: 95%;
+*/
 }
 
 header p.name, p.subtitle, p.more {
@@ -115,14 +121,18 @@ header p.subname_950, header p.subname_800 {
 	}
 }
 
-@media all and (max-width: 350px)
+@media all and (max-width: 830px)
 {
 	.icteam {
 		display: none;
 	}
 }
 
-/* =============== CSS styles for navigation list =================== */
+
+
+
+
+/* ===================== CSS styles for nav ====================== */
 
 nav {
 	margin: auto;
@@ -130,104 +140,216 @@ nav {
 	padding-bottom: 20px;
 }
 
-.nav_800 {
+nav.smallScreen {
 	display: none;
 }
 
-nav > ul {
-	list-style-type: none;
+nav ul {
+  list-style-type: none;
 	padding: 0;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
-/*
-	border-bottom: 2px solid #e0e0e0;
-*/
 	border-bottom: 2px solid #3973ac;
 }
 
-nav > ul > li {
-	padding: 10px 25px;
-}
-
-nav > ul > li > a:hover {
-/*
-	background-color: #e0e0e0;
-*/
-	background-color: #3973ac;
-	color: #ffffff;
-/*
+nav li.navTitle {
 	font-weight: bold;
-*/
+	font-size: 175%;
 }
 
-nav > ul > li > a {
-	text-decoration: none;
-	padding: 10px 20px;
+nav li, nav li > a {
 	color: black;
 }
 
-nav > ul > li.active > a {
-	cursor: default;
-	/*background-color: #e0e0e0;*/
+nav li > a, nav li.navTitle > a{
+	float: left;
+	line-height: 20px;
+	display: block;
+	padding: 13px 20px 13px 18px;
+	text-decoration: none;
+}
+
+nav li:first-child {
+	padding-left: 0;
+}
+
+nav li:last-child {
+	padding-right: 0;
+}
+
+nav i, .overlay i {
+	padding-right: 0.5em;
+	padding-left: -0.2em;
+}
+
+nav li.active, nav li:hover {
 	background-color: #3973ac;
-	color: #ffffff;
 	font-weight: bold;
 }
 
-@media all and (max-width: 1120px)
-{
-	nav > ul > li {
-		padding: 8px 10px;
-	}
+nav li.active > a, nav li:hover > a {
+	color: #ffffff;
+}
+
+nav li.navTitle:hover > a {
+	background-color: #489aff;
+	text-decoration: none;
+	color: #fefefe;
 }
 
 
-@media all and (max-width: 900px)
-{
-	nav > ul > li {
-		padding: 8px 5px;
-	}
+
+
+
+
+
+/* The Overlay (background) */
+.menu__overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 0%;
+    width: 100%;
+    /* Stay in place and sit on top */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    /* Coloration */
+    background-color: #3973ac;
+    /* Disable horizontal scroll and add slide down */
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 25%; 
+    width: 100%; 
+    text-align: center; 
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+.menu__overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 200%;
+    color: #fefefe;
+    display: block;
+    transition: 0.2s; /* Transition effects on hover (color) */
 }
 
 
+.menu__overlay a:hover, .menu__overlay a:focus, .menu__overlay a:active {
+    color: #ffa64d;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .menu__overlay a {font-size: 20px}
+}
+
+
+/* Responsive */
 @media all and (max-width: 830px)
 {
-	.nav {
+  nav.smallScreen {
+    display: block;
+  }
+  
+	nav.largeScreen {
 		display: none;
 	}
-	.nav_800 {
-		display: inline;
-	}
-	
-	nav > ul {
-		border: 0;
-		justify-content: center;
-		margin-bottom: 30px;
-	}
-	
-	nav > ul > li {
-		padding: 0 20px;
-		margin: 0;
-		width: 6.5%;
-	}
-
-	nav > ul > li > a:hover {
-		border-bottom: solid 2px #3973ac;
-		background-color: transparent;
-	}
-
-	nav > ul > li > a {
-		padding: 10% 25%;
-	}
-
-	nav > ul > li.active > a {
-		cursor: default;
-		background-color: transparent;
-		border-bottom: solid 2px #3973ac;
-	}
+  
+  .icon {
+    position: absolute;
+    top: 70%;
+    right: 70%;
+    transform: translateX(50%) translateY(-50%);
+  }
+  .hamburger {
+    content: ' ';
+    position: relative;
+    width: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    transition: all 0.333333333333333s ease;
+  }
+  .hamburger:after,
+  .hamburger:before {
+    content: ' ';
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    transition-property: top, bottom, transform;
+    transition-duration: 1s, 1s, 0.25s;
+  }
+  .hamburger:after {
+    top: -9px;
+  }
+  .hamburger:before {
+    bottom: -9px;
+  }
+  .menu__toggle {
+    z-index: 2;
+    position: fixed;
+    top: -100px;
+    right: -100px;
+    width: 200px;
+    height: 200px;
+    background-color: #3973ac;
+    border-radius: 50%;
+    transition: transform 1.3s;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .menu__active {
+    position: relative;
+  }
+  #menu__active {
+    position: fixed;
+    top: -99999px;
+    left: -99999px;
+  }
+  #menu__active:checked ~ label .menu__toggle {
+    background-color: #ffffff;
+    transition: all 1s;
+  }
+  #menu__active:checked ~ label .hamburger {
+    border-color: transparent;
+    transition: border-color 0.333333333333333s;
+  }
+  #menu__active:checked ~ label .hamburger:after {
+    top: -2px;
+    border-color: #3973ac;
+    transform: translateX(-50%) rotate(45deg);
+    transition-property: top, transform;
+    transition-duration: 0.25s, 1s;
+  }
+  #menu__active:checked ~ label .hamburger:before {
+    bottom: -2px;
+    border-color: #3973ac;
+    transform: translateX(-50%) rotate(-45deg);
+    transition-property: bottom, transform;
+    transition-duration: 0.25s, 1s;
+  }
+  #menu__active:checked ~ label .menu__overlay {
+    height:100%;
+    transition-duration: 1s;
+  }
 }
+
+
+
+
+
+
+
+
 
 
 /* =================== CSS styles for sections ====================== */
