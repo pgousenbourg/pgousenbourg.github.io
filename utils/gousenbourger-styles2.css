@@ -62,6 +62,22 @@ p.more, a.more {
 	font-size: 90%;
 }
 
+a.bigButton:link, a.bigButton:visited {
+  border: 0px;
+  padding: 10px 30px;
+  margin: 10px;
+  background-color: #3973ac;
+  color: #ffffff;
+  font-size: 110%;
+  text-align: center;
+}
+
+a.bigButton:hover, a.bigButton:active {
+  border: #ffa64d 2px solid;
+  font-weight: bold;
+}
+
+
 /* ===================== CSS styles for header ====================== */
 
 header {
