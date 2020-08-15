@@ -194,23 +194,19 @@ nav li, nav li > a {
 	color: black;
 }
 
+nav li > a {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 13px 20px 13px 18px;
+}
+
 nav li {
 	display: block;
-	padding: 13px 20px 13px 18px;
 	text-decoration: none;
 	position:relative;
 }
 
-
-/*
-nav li:first-child {
-	padding-left: 0;
-}
-
-nav li:last-child {
-	padding-right: 0;
-}
-*/
 
 nav i, .overlay i {
 	padding-right: 0.5em;
