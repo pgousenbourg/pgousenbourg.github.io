@@ -189,10 +189,12 @@ nav ul {
 }
 
 nav li, nav li > a {
+  display: block;
+  position: relative;
 	color: black;
 }
 
-nav li > a {
+nav li {
 	display: block;
 	padding: 13px 20px 13px 18px;
 	text-decoration: none;
@@ -200,6 +202,7 @@ nav li > a {
 }
 
 
+/*
 nav li:first-child {
 	padding-left: 0;
 }
@@ -207,18 +210,44 @@ nav li:first-child {
 nav li:last-child {
 	padding-right: 0;
 }
+*/
 
 nav i, .overlay i {
 	padding-right: 0.5em;
 	padding-left: -0.2em;
 }
 
-
-nav li.active > a, nav li > a:hover {
-	font-weight: bold;
+nav li.active a, nav li:hover a {
+	z-index: 1;
+  font-weight: bold;
 	color: #ffffff;
-	background-color: #3973ac;
+  transition: all 0.6s;
 }
+
+nav li.active {
+  background-color: #3973ac;
+}
+
+nav li::before, nav li.active::before {
+  border-bottom: 4px #ffa64d solid;
+  content: '';
+  position: absolute;
+  background-color: #3973ac;
+}
+
+nav li::before {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+  transition: all 0s;
+}
+
+nav li:hover:before, nav li.active:before {
+  width: 100%;
+  transition: all 0.6s;
+}
+
 
 
 
