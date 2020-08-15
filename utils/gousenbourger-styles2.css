@@ -221,7 +221,7 @@ nav li.active a, nav li:hover a {
 	z-index: 1;
   font-weight: bold;
 	color: #ffffff;
-  transition: all 0.6s;
+  transition: all 0.3s;
 }
 
 nav li.active {
