@@ -145,6 +145,86 @@
         
         <article>
           <p class="subtitle" style="margin-top:0">
+            <img style="padding-right: 10px;" height="20px" src="pics/icon_thesis.png"> PhD thesis
+          </p>
+          <ul class="papers">
+            <!-- Frontiers -->
+            <li>
+              <div class="paperEntry">
+                <div>
+                  P.-Y. Gousenbourger. 
+                  <span class="paperTitle">Interpolation and fitting on Riemannian manifolds.</span>
+                  <span class="paperJournal">PhD thesis, UCLouvain.</span>, 2020.
+                </div>
+                <ul class="icons">
+                  <li><a class="more" onclick="$('#abs_thesis01').slideToggle(400);"><img src="pics/icon_abstract.png"></a></li>
+                  <li><a target="_blank" href="pdf/thesis_gousenbourger_20200915.pdf"><img src="pics/icon_pdf.png"></a></li>
+                  <li><a class="more" onclick="$('#cite_thesis01').slideToggle(400);"><img src="pics/icon_bib.png"></a></li>
+                  <li><img src="pics/icon_white.png"></a></li>
+                </ul>
+              </div>
+              <p class="paperAbstract" id="abs_thesis01">
+                The access to constantly increasing computational 
+                capacities has revolutionized the way engineering is 
+                seen. We are now able to produce a large quantity of 
+                data, thanks to cheap sensors. However, processing 
+                such data remains costly both in computational time and
+                in energy. One of the reasons is that the structure of 
+                the data is often omitted or unknown. The search space 
+                becomes so large that finding the solution to simple 
+                problems often turns out to be finding a needle in a 
+                haystack.<br/>
+
+                A classical problem in data processing is called the 
+                "fitting problem". It consists in fitting a 
+                d-dimensional curve to a set of data points associated
+                to d parameters. The curve must pass sufficiently 
+                close to the data points while being regular enough. 
+                When the underlying structure of the data points 
+                (i.e., the manifold) is known, one can impose to the 
+                curve to preserve this structure (i.e., to remain on 
+                the manifold), such that the search space is 
+                drastically reduced.<br/>
+                
+                The goal of this thesis is to develop methods to 
+                (approximately) solve this fitting problem; the bet is 
+                to require "less" (less computational capabilities, 
+                power, storage, time) by leveraging “more” knowledge 
+                on the search space. The objective is the following: 
+                provide a toolbox that produces a differentiable 
+                fitting curve to data points on manifolds, based on 
+                very few and simple geometric tools, at low 
+                computational cost and storage capacity, all this 
+                while maintaining an acceptable quality of the 
+                solutions.<br/>
+                
+                The algorithms are applied to different illustrative 
+                problems. In 3D shape reconstruction, the data points 
+                are organs contours acquired via MRI, and the 
+                parameter is the acquisition depth; in wind fields 
+                estimation, the data points belong to the manifold of 
+                positive semi-definite matrices of given rank, and the 
+                parameters are the prevalent wind amplitudes and 
+                angles. We also show the performances of our 
+                algorithms in applications for parametric model order 
+                reduction.
+              </p>
+              <div class="paperQuote" id="cite_thesis01">
+<pre class="codeinput">@phdthesis{Gousenbourger2020thesis,
+  author  = {Gousenbourger, Pierre-Yves},
+  title	  = {Interpolation and fitting on Riemannian manifolds},
+  school  = {UCLouvain, ICTEAM institute},
+  year	  = {2020}
+}</pre>
+              </div>
+            </li>
+          </ul>
+          
+          
+          
+          
+          
+          <p class="subtitle" style="margin-top:0">
             <img style="padding-right: 10px;" height="20px" src="pics/icon_pdf.png"> Journal papers
           </p>
           <ul class="papers">
